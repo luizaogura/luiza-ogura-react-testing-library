@@ -6,12 +6,13 @@ import pokemonList from '../data';
 
 describe('Testa o componente <PokemonDetails.js />', () => {
   const pikachu = pokemonList[0];
+  const moreDetails = 'More details';
 
   test('Testa se as informações detalhadas do Pokémon selecionado são mostradas na tela', () => {
     const { getByRole, getByText } = renderWithRouter(<App />);
 
     const eletricCategory = getByRole('button', { name: 'Electric' });
-    const pikachuLink = getByRole('link', { name: 'More details' });
+    const pikachuLink = getByRole('link', { name: moreDetails });
     userEvent.click(eletricCategory);
     userEvent.click(pikachuLink);
 
@@ -28,7 +29,7 @@ describe('Testa o componente <PokemonDetails.js />', () => {
     const { getByRole, getAllByAltText } = renderWithRouter(<App />);
 
     const eletricCategory = getByRole('button', { name: 'Electric' });
-    const pikachuLink = getByRole('link', { name: 'More details' });
+    const pikachuLink = getByRole('link', { name: moreDetails });
     userEvent.click(eletricCategory);
     userEvent.click(pikachuLink);
 
@@ -50,7 +51,7 @@ describe('Testa o componente <PokemonDetails.js />', () => {
     const { getByRole } = renderWithRouter(<App />);
 
     const eletricCategory = getByRole('button', { name: 'Electric' });
-    const pikachuLink = getByRole('link', { name: 'More details' });
+    const pikachuLink = getByRole('link', { name: moreDetails });
     userEvent.click(eletricCategory);
     userEvent.click(pikachuLink);
 
